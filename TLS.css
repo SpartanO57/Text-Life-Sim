@@ -1,0 +1,25 @@
+#header {
+  text-align: center;
+  border: dashed;
+  font-family: cursive;
+  border-width: thin;
+  background-color: red;
+  color: #3399ff;
+}
+
+#fatHazardSays {
+  text-align: center;
+  background-color: gold;
+  color: red;
+}
+
+#years {
+  text-align: center;
+  background-color: blue;
+  color: magenta;
+  width: 25%;
+}
+
+#footer {
+  position: fixed;
+}
