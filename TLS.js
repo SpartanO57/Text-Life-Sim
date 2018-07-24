@@ -1,6 +1,10 @@
 var currentAge = 0;
 
-var deaths = []
+var deaths = Math.floor(Math.random() * 17) + 1;
+
+var deathType = ["Died from dysentery on the Oregon Trail", "You'r father got drunk and thought you were a football...go eagles..","Left in a car, Your mother wasn't very bright....","Having  a perscription pill smoothie cause no one understands you!, Being a teenager is hard....","Tide Pods©, Am I right?","Cause holding Saturn Missiles in your bare hands was a great idea","Because you just can't even right now","Jumping out of a moving truck is totally badass, What could possibly go wrong?","Cause fucking on the side of the road is so HAWT!!","Going home with someone you just met only to wake up as a skin suit, whoops....","Its dangerous to go alone...","Your parents traded you for a ham sandwich....damn hippies","Why the fuck would you do that!?!?","Woke up chained to the ground in a bathroom, Time to saw off your arm!! 0_0","Picking up strangers was a risk you were willing to take","DONALD TRUMP!!!","Thanks Obama!","Because fuck you that's why!"]
+
+var deathTypes = deathType[Math.floor(Math.random() * deathType.length)];
 
 function ageUp() {
   if (currentAge >= 0) {
@@ -15,15 +19,15 @@ function ageUp() {
 function deathCheck() {
   var death = Math.floor(Math.random() * 100) +1;
     if (currentAge <= 60 && death >= 99) {
-      window.alert("Your Dead. Shit Happens. AGE: " + currentAge);
+      window.alert(deathTypes + " AGE: " + currentAge);
       console.log("Dead Age: " + currentAge);
       location.reload();
   } else if (currentAge >=60 && death >= 75){
-      window.alert("Your Dead Old Man. AGE: " + currentAge)
+      window.alert(deathTypes + " AGE: " + currentAge)
       console.log("You died at " + currentAge);
       location.reload();
   } else if (currentAge >= 80 && death > 50) {
-    window.alert("You lived a long lonely life. AGE: " + currentAge);
+    window.alert(deathTypes + "AGE: " + currentAge);
     location.reload();
   } else {
     console.log("Still Alive AGE: " + currentAge);
@@ -63,4 +67,4 @@ function fatHazard() {
     }
 };
 
-//Ver 0.0.7
+//Ver 0.0.8
