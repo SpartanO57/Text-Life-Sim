@@ -18,6 +18,15 @@
   background-color: blue;
   color: magenta;
   width: 25%;
+  display: inline-block;
+}
+
+#havingSex {
+  text-align: center;
+  background-color: pink;
+  color: white;
+  width: 25%;
+  display: inline-block;
 }
 
 #footer {
