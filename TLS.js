@@ -2,6 +2,14 @@ var currentAge = 0;
 
 var deaths = Math.floor(Math.random() * 17) + 1;
 
+var hadSex = 0;
+
+var children = 0;
+
+var gender = "Male";
+
+var stds = [];
+
 var child = ["Died from dysentery on the Oregon Trail","your father got drunk and thought you were a football...go eagles..","left in a car, your mother wasn't very bright....","tide pods©, am i right?","it's dangerous to go alone...","your parents traded you for a ham sandwich....damn hippies ","DONALD TRUMP!!!","Thanks Obama!","because fuck you that's why!"];
 
 var teen = ["having  a prescription pill smoothie cause no one understands you!, being a teenager is hard....","tide pods©, am i right?","because you just can't even right now","jumping out of a moving truck is totally badass, what could go wrong?","cause fucking on the side of the road is so HAWT!!","going home with someone you just met only to wake up as a skin suit, whoops....","its dangerous to go alone...","why the fuck would you do that!?!?","DONALD TRUMP!!!","Thanks Obama!","because fuck you that's why!"];
@@ -24,18 +32,74 @@ function ageUp() {
   }
 };
 
+function Sex() {
+  if (currentAge >= 16) {
+    hadSex ++;
+    document.getElementById("haveSex").innerHTML = hadSex;
+    stdTest();
+    document.getElementById("stdsGot").innerHTML = stds;
+  } else {
+    window.alert("You can't even get a boner yet! Try again at 16 pervert.")
+  }
+};
+
+function stdTest() {
+  var getStd = Math.floor(Math.random() * 7);
+  switch (getStd) {
+    case 0:
+      console.log("Clean");
+      break;
+      case 1:
+      window.alert("You got HIV.");
+      stds.push(" HIV");
+      console.log(stds);
+      break;
+      case 2:
+      window.alert("You got Syphilis!");
+      stds.push(" Syphilis");
+      console.log(stds);
+      break;
+      case 3:
+      window.alert("You got Crabs! ITCHY");
+      stds.push(" Crabs");
+      console.log(stds);
+      break;
+      case 4:
+      window.alert("You got Herpes!");
+      stds.push(" Herpes");
+      console.log(stds);
+      break;
+      case 5:
+      window.alert("You got Gonorrhea!");
+      stds.push(" Gonorrhea");
+      console.log(stds);
+      break;
+      case 6:
+      window.alert("You got Gonoherpasyphilaids");
+      stds.push(" Gonoherpasyphilaids");
+      console.log(stds);
+      break;7
+    default:
+      console.log("ERROR!!!");
+      console.log(stds);
+  }
+}
+
 function deathCheck() {
   var death = Math.floor(Math.random() * 100) +1;
     if (currentAge >= 0 && currentAge <= 12 && death >= 99) {
       window.alert(childDeath + " AGE: " + currentAge);
       console.log("Dead Age: " + currentAge);
       location.reload();
-  } else if (currentAge >= 13 && currentAge <= 19 && death <= 75){
+  } else if (currentAge >= 13 && currentAge <= 19 && death >= 98){
       window.alert(teenDeath + " AGE: " + currentAge)
       console.log("You died at " + currentAge);
       location.reload();
-  } else if (currentAge >= 20 && death <= 80) {
-    window.alert(adultDeath + "AGE: " + currentAge);
+  } else if (currentAge >= 20 && death >= 95) {
+    window.alert(adultDeath + " AGE: " + currentAge);
+    location.reload();
+  } else if (currentAge >= 60 && death >= 90){
+    window.alert (adultDeath + " AGE: " + currentAge);
     location.reload();
   } else {
     console.log("Still Alive AGE: " + currentAge);
@@ -75,4 +139,4 @@ function fatHazard() {
     }
 };
 
-//Ver 0.1.0
+//Ver 0.1.5 (beta)
