@@ -153,4 +153,4 @@ function fatHazard() {
     }
 };
 
-//Ver 0.1.5 (beta)
+//Ver 0.2.0
