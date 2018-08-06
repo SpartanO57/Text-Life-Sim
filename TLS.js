@@ -38,6 +38,7 @@ function Sex() {
     document.getElementById("haveSex").innerHTML = hadSex;
     stdTest();
     document.getElementById("stdsGot").innerHTML = stds;
+    pregnancy();
   } else {
     window.alert("You can't even get a boner yet! Try again at 16 pervert.")
   }
@@ -83,7 +84,20 @@ function stdTest() {
       console.log("ERROR!!!");
       console.log(stds);
   }
-}
+};
+
+function pregnancy() {
+  var pregnant = Math.floor(Math.random() * 5);
+  console.log(pregnant);
+  if (pregnant === 2) {
+    children ++;
+    window.alert("IM PREGNANT!!!");
+    document.getElementById("childCounter").innerHTML = children;
+    console.log("CHILD");
+  } else {
+    console.log("No Child");
+  }
+};
 
 function deathCheck() {
   var death = Math.floor(Math.random() * 100) +1;
