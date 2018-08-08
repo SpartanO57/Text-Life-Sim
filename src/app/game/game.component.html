@@ -1,0 +1,25 @@
+<div>
+  <div class="card m-2">
+    <div class="card-body">
+      <div class="card-title">
+        Age
+      </div>
+      <div class="card-text">
+        {{game.currentAge}}
+      </div>
+      <button class="btn btn-primary mt-2" (click)="ageUpClicked()">Age Up</button>
+    </div>
+  </div>
+  <!--This is were the sex object is going to go. eventually this will be put inline with the rest of the document to sit in the center of the page-->
+  <div *ngIf="game.canHaveSex" class="card m-2">
+    <div class="card-body">
+      <div class="card-title">
+        Had Sex
+      </div>
+      <div class="card-text">
+        {{game.timesHadSex}}
+      </div>
+      <button class="btn btn-danger mt-2" (click)="haveSexClicked()">Have Sex</button>
+    </div>
+  </div>
+</div>
