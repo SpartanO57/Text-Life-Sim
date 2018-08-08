@@ -17,16 +17,18 @@
   text-align: center;
   background-color: blue;
   color: magenta;
-  width: 25%;
-  display: inline-block;
 }
 
 #havingSex {
   text-align: center;
   background-color: pink;
   color: white;
-  width: 25%;
-  display: inline-block;
+}
+
+#skillsArea {
+  text-align: center;
+  background-color: orange;
+  color: black;
 }
 
 #footer {
@@ -42,4 +44,15 @@
 
 #patch {
   color:green;
+}
+
+#left {
+  display: inline-block;
+  width: 40%;
+}
+
+#right {
+  display: inline-block;
+  width: 40%;
+
 }

@@ -8,6 +8,24 @@ var children = 0;
 
 var gender = "Male";
 
+var mathSkills = 0;
+
+var readingSkills = 0;
+
+var writingSkills = 0;
+
+var musicSkills = 0;
+
+var medicalSkills = 0;
+
+var athleticSkills = 0;
+
+var scienceSkills = 0;
+
+var astronomySkill = 0;
+
+var classLimit = 0;
+
 var stds = [];
 
 var child = ["Died from dysentery on the Oregon Trail","your father got drunk and thought you were a football...go eagles..","left in a car, your mother wasn't very bright....","tide pods©, am i right?","it's dangerous to go alone...","your parents traded you for a ham sandwich....damn hippies ","DONALD TRUMP!!!","Thanks Obama!","because fuck you that's why!"];
@@ -27,6 +45,8 @@ function ageUp() {
     currentAge ++;
     document.getElementById("age").innerHTML = currentAge;
     deathCheck();
+    classLimit = 0;
+    document.getElementById("skillsRemaining").innerHTML = "Skills used: 0";
   } else {
     console.log("Warning!!! ISSUE DETECTED IN AGE");
   }
@@ -99,6 +119,138 @@ function pregnancy() {
   }
 };
 
+function skillUse() {
+  document.getElementById("skillsRemaining").innerHTML = "Skills used:  " + classLimit;
+}
+
+function studyMath() {
+  if (mathSkills >= 0 && classLimit <= 2) {
+      var mathSkillUp = Math.floor(Math.random() * 2) + 1;
+      console.log("Rolled a: " + mathSkillUp);
+      mathSkills = mathSkills + mathSkillUp;
+      console.log("Math skill is at: " + mathSkills);
+      classLimit ++;
+      console.log("Class Limit " + classLimit);
+      document.getElementById("mathArea").innerHTML = "Math Skills: " + mathSkills;
+  } else if (classLimit === 3) {
+    window.alert("You can only study 3 skills per age");
+  } else {
+    console.log("ERROR! LINE 118-127");
+  }
+};
+
+function studyReading() {
+  if (readingSkills >= 0 && classLimit <= 2) {
+    var readingSkillUp = Math.floor(Math.random() * 2) +1;
+    console.log("Rolled a: " + readingSkillUp);
+    readingSkills = readingSkills + readingSkillUp;
+    console.log("Reading Skills are at: " + readingSkills);
+    classLimit ++;
+    console.log("Class Limit " + classLimit);
+    document.getElementById("readingArea").innerHTML = "Reading Skills: " + readingSkills;
+  } else if (classLimit === 3 ) {
+    window.alert("You can only study 3 skill per age");
+  } else {
+    console.log("ERROR! LINE 136-149");
+  }
+};
+
+function studyWriting() {
+  if (writingSkills >= 0 && classLimit <=2) {
+    var writingSkillUp = Math.floor(Math.random() * 2) + 1;
+    console.log("Rolled a: " + writingSkillUp);
+    writingSkills = writingSkills + writingSkillUp;
+    console.log("Writing Skills are at: " + writingSkills);
+    classLimit ++;
+    console.log("Class Limit " + classLimit);
+    document.getElementById("writingArea").innerHTML = "Writing Skills: " + writingSkills;
+  } else if (classLimit === 3) {
+    window.alert("You can only study 3 skills per age");
+  } else {
+    console.log("ERROR! LINE 151-164");
+  }
+};
+
+function studyMusic() {
+  if (musicSkills >= 0 && classLimit <= 2) {
+      var musicSkillUp = Math.floor(Math.random() * 2) + 1;
+      console.log("Rolled a: " + musicSkillUp);
+      musicSkills = musicSkills + musicSkillUp;
+      console.log("Music Skills are at: " + musicSkills);
+      classLimit ++;
+      console.log("Class Limit " + classLimit);
+      document.getElementById("musicArea").innerHTML = "Music Skills: " + musicSkills;
+  } else if (classLimit === 3) {
+    window.alert("You can only study 3 skills per age");
+  } else {
+    console.log("ERROR! LINE 166-179");
+  }
+};
+
+function studyMedicine() {
+  if (medicalSkills >= 0 && classLimit <= 2) {
+    var medicalSkillUp = Math.floor(Math.random() * 2) + 1;
+    console.log("Rolled a: " + medicalSkillUp);
+    medicalSkills = medicalSkillUp + medicalSkills;
+    console.log("Music Skills are at: " + musicSkills);
+    classLimit ++;
+    console.log("Class Limit " + classLimit);
+    document.getElementById("medicArea").innerHTML = "Medical Skill: " + medicalSkills;
+  } else if (classLimit === 3) {
+    window.alert("You can only study 3 skills per age");
+  } else {
+    console.log("ERROR! LINE 181-194");
+  }
+};
+
+function studyAthlete() {
+  if (athleticSkills >= 0 && classLimit <= 2) {
+    var athleticSkillUp = Math.floor(Math.random() * 2) + 1;
+    console.log("Rolled a: " + athleticSkillUp);
+    athleticSkills = athleticSkills + athleticSkillUp;
+    console.log("Athletic Skills are at: " + athleticSkills);
+    classLimit ++;
+    console.log("Class Limit " + classLimit);
+    document.getElementById("gymArea").innerHTML = "Athleticism: " + athleticSkills;
+  } else if (classLimit === 3) {
+    window.alert("You can only study 3 skills per age");
+  } else {
+    console.log("ERROR! LINE 196-209");
+  }
+};
+
+function studyScience() {
+  if (scienceSkills >= 0 && classLimit <= 2){
+    var scienceSkillUp = Math.floor(Math.random() * 2) + 1;
+    console.log("Rolled a: " + scienceSkillUp);
+    scienceSkills = scienceSkills + scienceSkillUp;
+    console.log("Science Skills are at " + scienceSkills);
+    classLimit ++;
+    console.log("class limit " + classLimit);
+    document.getElementById("labArea").innerHTML = "Science Skill: " + scienceSkills;
+  } else if (classLimit === 3) {
+    window.alert("You can only study 3 skills per age");
+  } else {
+    console.log("ERROR! LINE 211- 224");
+  }
+};
+
+function studyAstronomy() {
+  if (astronomySkill >= 0 && classLimit <= 2) {
+    var astronomySkillUp = Math.floor(Math.random() * 2) + 1;
+    console.log("Rolled a: " + astronomySkillUp);
+    astronomySkill = astronomySkill + astronomySkillUp;
+    console.log("Astronomy Skill is at: " + astronomySkill);
+    classLimit ++;
+    console.log("class limit " + classLimit);
+    document.getElementById("planetarium").innerHTML = "Astronomy Skill: " + astronomySkill;
+  } else if (classLimit === 3) {
+    window.alert("You can only study 3 skills per age");
+  } else {
+    console.log("ERROR! LINE 226-239");
+  }
+};
+
 function deathCheck() {
   var death = Math.floor(Math.random() * 100) +1;
     if (currentAge >= 0 && currentAge <= 12 && death >= 99) {
@@ -153,4 +305,4 @@ function fatHazard() {
     }
 };
 
-//Ver 0.2.0
+//Ver 0.3.0 (beta)
