@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Game } from './game.model';
+import { Game } from '../models/game.model';
 
 @Component({
   selector: 'app-game',
@@ -16,8 +16,7 @@ export class GameComponent implements OnInit {
   }
 
   ageUpClicked() {
-    this.game.ageUp();
-    console.log(this);
+    this.game.tick();
   }
 
   haveSexClicked() {
