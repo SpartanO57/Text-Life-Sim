@@ -1,14 +1,23 @@
 <div class="container">
-<div class="jumbotron">
-  <h1 class="display-4">Text Life Simulator</h1>
-  <p>What kind of life will you live?</p>
-  <a href="https://text-life-sim.000webhostapp.com/patchNotes.html"> Patch Notes</a>
-  <!--<p>>>>>NOW WITH IMMORTALITY!!!!!<<<<</P>-->
+  <div class="jumbotron">
+    <h1 class="display-4">Text Life Simulator</h1>
+    <p>What kind of life will you live?</p>
+    <a href="https://text-life-sim.000webhostapp.com/patchNotes.html"> Patch Notes</a>
+  </div>
+  <router-outlet></router-outlet>
+  <ul class="nav justify-content-center|justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/character">Character</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/settings">Settings</a>
+      </li>
+  </ul>
+  <footer id="footer">
+    <p>Copyright (c) 2018 Violent Response Entertainment All Rights Reserved. Special thanks to Fat Hazard for all his input.
+      Ver. 0.1.1.</p>
+  </footer>
 </div>
-<app-fatsays></app-fatsays>
-<app-game></app-game>
-<footer id="footer">
-<p>Copyright (c) 2018 Violent Response Entertainment All Rights Reserved. Special thanks to Fat Hazard for all his input. Ver. 0.1.1.</p>
-</footer>
-</div>
-
