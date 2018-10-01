@@ -1,5 +1,9 @@
 var currentAge = 0;
 
+var currentMoney = 0;
+
+var currentJob = "None";
+
 var deaths = Math.floor(Math.random() * 17) + 1;
 
 var hadSex = 0;
@@ -270,7 +274,7 @@ function studyAstronomy() {
 };
 
 function itemUse() {
-  ;
+
 }
 
 function deathCheck() {
