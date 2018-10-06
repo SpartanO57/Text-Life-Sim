@@ -1,3 +1,4 @@
+//Basic Info about player
 var currentAge = 0;
 
 var currentMoney = 0;
@@ -12,6 +13,7 @@ var children = 0;
 
 var gender = "Male";
 
+//Sweet Skills
 var mathSkills = 0;
 
 var readingSkills = 0;
@@ -30,8 +32,10 @@ var astronomySkill = 0;
 
 var classLimit = 0;
 
+//Disease Zone
 var stds = [];
 
+//Item Area
 var condoms = 0;
 
 var mathBooks = 0;
@@ -50,6 +54,7 @@ var sheetMusic = 0;
 
 var weightLiftingMagazine = 0;
 
+//Death Zone
 var child = ["Died from dysentery on the Oregon Trail","your father got drunk and thought you were a football...go eagles..","left in a car, your mother wasn't very bright....","tide pods©, am i right?","it's dangerous to go alone...","your parents traded you for a ham sandwich....damn hippies ","DONALD TRUMP!!!","Thanks Obama!","because fuck you that's why!"];
 
 var teen = ["having  a prescription pill smoothie cause no one understands you!, being a teenager is hard....","tide pods©, am i right?","because you just can't even right now","jumping out of a moving truck is totally badass, what could go wrong?","cause fucking on the side of the road is so HAWT!!","going home with someone you just met only to wake up as a skin suit, whoops....","its dangerous to go alone...","why the fuck would you do that!?!?","DONALD TRUMP!!!","Thanks Obama!","because fuck you that's why!"];
@@ -62,7 +67,8 @@ var teenDeath = teen[Math.floor(Math.random() * teen.length)];
 
 var adultDeath = adult[Math.floor(Math.random() * adult.length)];
 
-function ageUp() {
+//The InnerWorkings
+function ageUp() { //This function keeps track of age and skill point use.
   if (currentAge >= 0) {
     currentAge ++;
     document.getElementById("age").innerHTML = currentAge;
@@ -74,7 +80,7 @@ function ageUp() {
   }
 };
 
-function Sex() {
+function Sex() { //This function keeps track of the amoount of times the player has sex and pregnancys and STDS.
   if (currentAge >= 16) {
     hadSex ++;
     document.getElementById("haveSex").innerHTML = hadSex;
@@ -86,7 +92,7 @@ function Sex() {
   }
 };
 
-function stdTest() {
+function stdTest() {//This function is to check if player catches an STD
   var getStd = Math.floor(Math.random() * 7);
   switch (getStd) {
     case 0:
@@ -128,7 +134,7 @@ function stdTest() {
   }
 };
 
-function pregnancy() {
+function pregnancy() {//This Function test to find if player gets pragnant.
   var pregnant = Math.floor(Math.random() * 5);
   console.log(pregnant);
   if (pregnant === 2) {
@@ -141,11 +147,11 @@ function pregnancy() {
   }
 };
 
-function skillUse() {
+function skillUse() {//This function is to keep track of the skill use
   document.getElementById("skillsRemaining").innerHTML = "Skills used:  " + classLimit;
 }
 
-function studyMath() {
+function studyMath() { //This is to check how well the player gains a skill point in math 1-3 possible points
   if (mathSkills >= 0 && classLimit <= 2) {
       var mathSkillUp = Math.floor(Math.random() * 2) + 1;
       console.log("Rolled a: " + mathSkillUp);
@@ -161,7 +167,7 @@ function studyMath() {
   }
 };
 
-function studyReading() {
+function studyReading() {//This is to check how well the player gains a skill point in Reading. 1-3 possible points
   if (readingSkills >= 0 && classLimit <= 2) {
     var readingSkillUp = Math.floor(Math.random() * 2) +1;
     console.log("Rolled a: " + readingSkillUp);
@@ -177,7 +183,7 @@ function studyReading() {
   }
 };
 
-function studyWriting() {
+function studyWriting() {//This is to check how well the player gains skills in Writing. 1-3 points possible.
   if (writingSkills >= 0 && classLimit <=2) {
     var writingSkillUp = Math.floor(Math.random() * 2) + 1;
     console.log("Rolled a: " + writingSkillUp);
@@ -193,7 +199,7 @@ function studyWriting() {
   }
 };
 
-function studyMusic() {
+function studyMusic() {//This is to check how well the player gains skills in Music. 1-3 points possible.
   if (musicSkills >= 0 && classLimit <= 2) {
       var musicSkillUp = Math.floor(Math.random() * 2) + 1;
       console.log("Rolled a: " + musicSkillUp);
@@ -209,7 +215,7 @@ function studyMusic() {
   }
 };
 
-function studyMedicine() {
+function studyMedicine() {//This is to check how well the player gains skills in Medicine. 1-3 points possible.
   if (medicalSkills >= 0 && classLimit <= 2) {
     var medicalSkillUp = Math.floor(Math.random() * 2) + 1;
     console.log("Rolled a: " + medicalSkillUp);
@@ -225,7 +231,7 @@ function studyMedicine() {
   }
 };
 
-function studyAthlete() {
+function studyAthlete() {//This is to check how well the player gains athleic abilityies. 1-3 points possible.
   if (athleticSkills >= 0 && classLimit <= 2) {
     var athleticSkillUp = Math.floor(Math.random() * 2) + 1;
     console.log("Rolled a: " + athleticSkillUp);
@@ -241,7 +247,7 @@ function studyAthlete() {
   }
 };
 
-function studyScience() {
+function studyScience() {//This is to check how well the player gains skills in science. 1-3 points possible.
   if (scienceSkills >= 0 && classLimit <= 2){
     var scienceSkillUp = Math.floor(Math.random() * 2) + 1;
     console.log("Rolled a: " + scienceSkillUp);
@@ -257,7 +263,7 @@ function studyScience() {
   }
 };
 
-function studyAstronomy() {
+function studyAstronomy() {//This is to check how well the player gains skills in Astronomy. 1-3 points possible.
   if (astronomySkill >= 0 && classLimit <= 2) {
     var astronomySkillUp = Math.floor(Math.random() * 2) + 1;
     console.log("Rolled a: " + astronomySkillUp);
@@ -273,11 +279,13 @@ function studyAstronomy() {
   }
 };
 
+//This function is for a future feature that will include using items purchased to enhance skills in perticular areas or in the case of some items do related actions. Not priority till jobs and careers have been implamented.
 function itemUse() {
 
 }
 
-function deathCheck() {
+//Deaths Domain
+function deathCheck() {//This function is to control death and alert for death.
   var death = Math.floor(Math.random() * 100) +1;
     if (currentAge >= 0 && currentAge <= 12 && death >= 99) {
       window.alert(childDeath + " AGE: " + currentAge);
@@ -298,6 +306,7 @@ function deathCheck() {
   }
 };
 
+//Fat Hazards Corner.
 function fatHazard() {
   var fHS = Math.floor(Math.random() * 6);
     switch (fHS) {
