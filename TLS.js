@@ -81,12 +81,17 @@ function ageUp() { //This function keeps track of age and skill point use.
 };
 
 function Sex() { //This function keeps track of the amoount of times the player has sex and pregnancys and STDS.
-  if (currentAge >= 16) {
+  if (currentAge >= 16 && condoms === 0) {
     hadSex ++;
     document.getElementById("haveSex").innerHTML = hadSex;
     stdTest();
     document.getElementById("stdsGot").innerHTML = stds;
     pregnancy();
+  } else if (currentAge >= 16 && condoms >= 1) {
+    hadSex ++;
+    document.getElementById("haveSex").innerHTML = hadSex;
+    condoms --;
+    console.log("Condoms Left: " + condoms);
   } else {
     window.alert("You can't even get a boner yet! Try again at 16 pervert.")
   }
@@ -279,11 +284,166 @@ function studyAstronomy() {//This is to check how well the player gains skills i
   }
 };
 
+//Shop Zone
+function buyCondoms() {
+  condoms = condoms + 1;
+  document.getElementById("condoms").innerHTML = "Condoms Owned: " + condoms;
+  console.log("Condoms Owned: " + condoms);
+};
+
+function buyMathBook() {
+  mathBooks = mathBooks + 1;
+  document.getElementById("mathBooks").innerHTML = "Math Books Owned: " + mathBooks;
+  console.log("Math Books Owned: " + mathBooks);
+};
+
+function buyReadingMaterial() {
+  readingMaterial = readingMaterial + 1;
+  document.getElementById("litarature").innerHTML = "Litaracy Owned: " + readingMaterial;
+  console.log("Reading Material Owned: " + readingMaterial);
+};
+
+function buyStarGuide() {
+  starGuide = starGuide + 1;
+  document.getElementById("starGuides").innerHTML = "Star Guides Owned: " + starGuide;
+  console.log("Star Guides Owned: " + starGuide);
+};
+
+function buySheetMusic() {
+  sheetMusic = sheetMusic + 1;
+  document.getElementById("sheetMusic").innerHTML = "Sheet Music Owned: " +
+  sheetMusic;
+  console.log("Sheet Music owned: " + sheetMusic);
+};
+
+function buyMedicalBook() {
+  medicalBooks = medicalBooks + 1;
+  document.getElementById("medicalBooks").innerHTML = "Medical Books Owned: " + medicalBooks;
+  console.log("Medical Books owned: " + medicalBooks);
+};
+
+function buyScienceMagazine() {
+  scienceMagazine = scienceMagazine + 1;
+  document.getElementById("scienceMagazine").innerHTML = "Science Magazines Owned: " + scienceMagazine;
+  console.log("Science Books Owned: " + scienceMagazine);
+};
+
+function buyStaionary() {
+  stationary = stationary + 1;
+  document.getElementById("Stationary").innerHTML = "Stationary Owned: " + stationary;
+  console.log("Stationary Owned: " + stationary);
+};
+
+function buyWeightLiftingMagazine() {
+  weightLiftingMagazine = weightLiftingMagazine + 1;
+  document.getElementById("weightLifting").innerHTML = "Weight Lifting Magazine Owned: " + weightLiftingMagazine;
+  console.log("Weight Lifting Magazine: " + weightLiftingMagazine);
+};
+
 //This function is for a future feature that will include using items purchased to enhance skills in perticular areas or in the case of some items do related actions. Not priority till jobs and careers have been implamented.
-function itemUse() {
+function useMathBook() {
+  if (mathBooks >= 1) {
+  mathBooks = mathBooks - 1;
+  mathSkills = mathSkills + 1;
+  console.log("Math books owned: " + mathBooks);
+  document.getElementById("mathArea").innerHTML = "Math Skill: " + mathSkills;
+  console.log("Math skill: " + mathSkills)
+  document.getElementById("mathBooks").innerHTML = "Math Books Owned: " + mathBooks;
+  } else {
+  console.log("No Math Books Owned");
+  }
+};
 
-}
+function useBook() {
+  if (readingMaterial >= 1) {
+  readingMaterial = readingMaterial - 1;
+  readingSkills = readingSkills + 1;
+  console.log("Books Owned: " + readingMaterial);
+  document.getElementById("readingArea").innerHTML = "Reading Skills: " + readingSkills;
+  console.log("Reading Skill: " + readingSkills);
+  document.getElementById("litarature").innerHTML = "Litaracy Owned: " + readingMaterial;
+  } else {
+  console.log("No Books Owned");
+  }
+};
 
+function useStarGuide() {
+  if (starGuide >= 1) {
+    starGuide = starGuide - 1;
+    console.log("Star Guide Owned: " + starGuide);
+    document.getElementById("starGuides").innerHTML = "Star Guides Owned: " + starGuide;
+    astronomySkill = astronomySkill + 1;
+    console.log("Astronomy Skill: " + astronomySkill);
+    document.getElementById("planetarium").innerHTML = "Astronomy Skill: " + astronomySkill;
+  } else {
+    console.log("No Star Guides Owned");
+  }
+};
+
+function useSheetMusic() {
+  if (sheetMusic >= 1) {
+    sheetMusic = sheetMusic - 1;
+    console.log("Sheet Music Owned: " + sheetMusic);
+    document.getElementById("sheetMusic").innerHTML = "Sheet Music Owned: " + sheetMusic;
+    musicSkills = musicSkills + 1;
+    console.log("Music Skills: " + musicSkills);
+    document.getElementById("musicArea").innerHTML = "Music Skill: " + musicSkills;
+  } else {
+    console.log("No Sheet Music Owned");
+  }
+};
+
+function useMedicalBook() {
+  if (medicalBooks >= 1) {
+    medicalBooks = medicalBooks - 1;
+    document.getElementById("medicalBooks").innerHTML = "Medical Books Owned: " + medicalBooks;
+    console.log("Medical Books Owned: " + medicalBooks);
+    medicalSkills = medicalSkills + 1;
+    document.getElementById("medicArea").innerHTML = "Medical Skills: " + medicalSkills;
+    console.log("Medical Skills: " + medicalSkills);
+  } else {
+    console.log("No Medical Books Left");
+  }
+};
+
+function useScienceMagazine() {
+  if (scienceMagazine >= 1) {
+    scienceMagazine = scienceMagazine - 1;
+    document.getElementById("scienceMagazine").innerHTML = "Science Magazine Owned: " + scienceMagazine;
+    console.log("Science Magazine Owned: " + scienceMagazine);
+    scienceSkills = scienceSkills + 1;
+    document.getElementById("labArea").innerHTML = "Science Skills: " + scienceSkills;
+    console.log("Science Skills:" + scienceSkills);
+  } else {
+    console.log("No Science Magazines Owned");
+  }
+};
+
+function useStationary() {
+  if (stationary >= 1) {
+    stationary = stationary - 1;
+    document.getElementById("Stationary").innerHTML = "Stationary Owned: " + stationary;
+    console.log("Stationary Owned: " + stationary);
+    writingSkills = writingSkills + 1;
+    document.getElementById("writingArea").innerHTML = "Writing Skill: " + writingSkills;
+    console.log("Writing Skill: " + writingSkills);
+  } else {
+    console.log("No Stationary Left");
+  }
+};
+
+function useWeightLiftingMagazine() {
+  if (weightLiftingMagazine >= 1) {
+    weightLiftingMagazine = weightLiftingMagazine - 1;
+    document.getElementById("weightLifting").innerHTML = "Weight Lifting Magazines Owned: " + weightLiftingMagazine;
+    console.log("Weight Lifting Magazines Owned: " + weightLiftingMagazine);
+    athleticSkills = athleticSkills + 1;
+    document.getElementById("gymArea").innerHTML = "Athleticism: " + athleticSkills;
+    console.log("Athleticism: " + athleticSkills);
+  } else {
+    console.log("No Magazines Left");
+  }
+};
 //Deaths Domain
 function deathCheck() {//This function is to control death and alert for death.
   var death = Math.floor(Math.random() * 100) +1;

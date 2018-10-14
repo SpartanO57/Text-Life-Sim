@@ -7,7 +7,7 @@
 <head>
 <body onload="fatHazard()">
   <div id="header">
-    <h1>Text Life Simulator</h1>
+    <h1>Text Life Simulator (beta)</h1>
     <p>What kind of life will you live?</p>
     <a href="https://text-life-sim.000webhostapp.com/patchNotes.html"> Patch Notes</a>
     <!--<p>>>>>NOW WITH IMMORTALITY!!!!!<<<<</P>-->
@@ -60,13 +60,36 @@
 <div id="shop">
   <h1>Local Shop</h1>
   <p>Buy your needs here</p>
-  <button type="button" onclick="#">Buy Condoms</button>
-  <button type="button" onclick="#">Buy a book about math</button>
-  <button type="button" onclick="#">Buy a book</button>
-  <button type="button" onclick="#">Buy a star guide</button>
-  <button type="button" onclick="#">Buy Sheet Music</button>
-  <button type="button" onclick="#">Buy Star Map</button>
-  <button type="button" onclick="#">Buy Science Magazine</button>
+  <button type="button" onclick="buyCondoms()">Buy Condoms</button>
+  <button type="button" onclick="buyMathBook()">Buy a book about math</button>
+  <button type="button" onclick="buyReadingMaterial()">Buy a book</button>
+  <button type="button" onclick="buyStarGuide()">Buy a star guide</button>
+  <button type="button" onclick="buySheetMusic()">Buy Sheet Music</button>
+  <button type="button" onclick="buyMedicalBook()">Buy Medical Book</button>
+  <button type="button" onclick="buyScienceMagazine()">Buy Science Magazine</button>
+  <button type="button" onclick="buyStaionary()">Buy Stationary</button>
+  <button type="button" onclick="buyWeightLiftingMagazine()">Buy Weight Lifting Magazine</button>
+</div>
+<div id="inventory">
+  <h1>Backpack</h1>
+  <p>This is where your stuff is</p>
+  <p id="condoms">Condoms Owned: 0 </p>
+  <p id="mathBooks">Math Books Owned: 0</p>
+  <button type="button" onclick="useMathBook()">Study Equasions</button>
+  <p id="litarature">Litaracy Owned : 0</p>
+  <button type="button" onclick="useBook()">Read Book</button>
+  <p id="starGuides">Star Guides Owned: 0</p>
+  <button type="button" onclick="useStarGuide()">View Star Guide</button>
+  <p id="sheetMusic">Sheet Music owned: 0</p>
+  <button type="button" onclick="useSheetMusic()">Study Sheet Music</button>
+  <p id="medicalBooks">Medical Books Owned: 0</p>
+  <button onclick="useMedicalBook()" type="button">Study Medical Books</button>
+  <p id="scienceMagazine">Science Magazines Owned: 0</p>
+  <button type="button" onclick="useScienceMagazine()">Perform Experiments</button>
+  <p id="Stationary">Stationary Owned: 0</p>
+  <button type="button" onclick="useStationary()">Write a Letter</button>
+  <p id="weightLifting">Weight Lifting Magazines Owned: 0</p>
+  <button type="button" onclick="useWeightLiftingMagazine()">Read Diet Tips</button>
 </div>
 <div id="jobs">
   <H1>Job Market</h1>
