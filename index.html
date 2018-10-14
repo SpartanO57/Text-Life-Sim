@@ -7,7 +7,7 @@
 <head>
 <body onload="fatHazard()">
   <div id="header">
-    <h1>Text Life Simulator</h1>
+    <h1>Text Life Simulator (beta)</h1>
     <p>What kind of life will you live?</p>
     <a href="https://text-life-sim.000webhostapp.com/patchNotes.html"> Patch Notes</a>
     <!--<p>>>>>NOW WITH IMMORTALITY!!!!!<<<<</P>-->
@@ -17,6 +17,7 @@
     <h1>Fat Hazard Says:</h1>
     <h3 id="FHS"></H3>
   </div>
+<div id="left">
 <div id="years">
     <button type="button" onclick="ageUp()">Age Up.</button>
     <h4>Age: </h4>
@@ -25,15 +26,76 @@
   <div id="havingSex">
     <button onclick="Sex()">Have Sex.</button>
     <h4>Had Sex</h4>
-    <h4 id="haveSex"></h4>
+    <h4 id="haveSex">0</h4>
     <h4>STD's you have</h4>
-    <h4 id="stdsGot"></h4>
+    <h4 id="stdsGot">None</h4>
     <h4>You have</h4>
-    <h4 id="childCounter"></h4>
+    <h4 id="childCounter">0</h4>
     <h4>children</h4>
 </div>
-</body>
-<footer id="footer">
-  <p>Copyright (c) 2018 Violent Response Entertainment All Rights Reserved. Special thanks to Fat Hazard for all his input. Ver. 0.2.1 (beta)</p>
-</footer>
-<!--Ver 0.2.1 (beta)-->
+</div>
+<div id="right">
+<div id="skillsArea">
+  <h1>Skills</h1>
+  <p>Limit 3 per age</p>
+  <button type="button" onclick="studyMath(), skillUse()">Math</button>
+  <button type="button" onclick="studyReading(), skillUse()">Reading</button>
+  <button type="button" onclick="studyWriting(), skillUse()">Writing</button>
+  <button type="button" onclick="studyMusic(), skillUse()">Music</button>
+  <button type="button" onclick="studyMedicine(), skillUse()">Medicine</button>
+  <button type="button" onclick="studyAthlete(), skillUse()">Workout</button>
+  <button type="button" onclick="studyScience(), skillUse()">Science</button>
+  <button type="button" onclick="studyAstronomy(), skillUse()">Astronomy</button>
+  <h4 id="skillsRemaining">Skills Used: 0</h4>
+  <h4 id="mathArea">Math Skill: 0</h4>
+  <h4 id="readingArea">Reading Skill: 0</h4>
+  <h4 id="writingArea">Writing Skill: 0</h4>
+  <h4 id="musicArea">Music Skill: 0</h4>
+  <h4 id="medicArea">Medical Skills: 0</h4>
+  <h4 id="gymArea">Athleticism: 0 </h4>
+  <h4 id="labArea">Science Skill: 0</h4>
+  <h4 id="planetarium">Astronomy Skill: 0</h4>
+</div>
+</div>
+<div id="shop">
+  <h1>Local Shop</h1>
+  <p>Buy your needs here</p>
+  <button type="button" onclick="buyCondoms()">Buy Condoms</button>
+  <button type="button" onclick="buyMathBook()">Buy a book about math</button>
+  <button type="button" onclick="buyReadingMaterial()">Buy a book</button>
+  <button type="button" onclick="buyStarGuide()">Buy a star guide</button>
+  <button type="button" onclick="buySheetMusic()">Buy Sheet Music</button>
+  <button type="button" onclick="buyMedicalBook()">Buy Medical Book</button>
+  <button type="button" onclick="buyScienceMagazine()">Buy Science Magazine</button>
+  <button type="button" onclick="buyStaionary()">Buy Stationary</button>
+  <button type="button" onclick="buyWeightLiftingMagazine()">Buy Weight Lifting Magazine</button>
+</div>
+<div id="inventory">
+  <h1>Backpack</h1>
+  <p>This is where your stuff is</p>
+  <p id="condoms">Condoms Owned: 0 </p>
+  <p id="mathBooks">Math Books Owned: 0</p>
+  <button type="button" onclick="useMathBook()">Study Equasions</button>
+  <p id="litarature">Litaracy Owned : 0</p>
+  <button type="button" onclick="useBook()">Read Book</button>
+  <p id="starGuides">Star Guides Owned: 0</p>
+  <button type="button" onclick="useStarGuide()">View Star Guide</button>
+  <p id="sheetMusic">Sheet Music owned: 0</p>
+  <button type="button" onclick="useSheetMusic()">Study Sheet Music</button>
+  <p id="medicalBooks">Medical Books Owned: 0</p>
+  <button onclick="useMedicalBook()" type="button">Study Medical Books</button>
+  <p id="scienceMagazine">Science Magazines Owned: 0</p>
+  <button type="button" onclick="useScienceMagazine()">Perform Experiments</button>
+  <p id="Stationary">Stationary Owned: 0</p>
+  <button type="button" onclick="useStationary()">Write a Letter</button>
+  <p id="weightLifting">Weight Lifting Magazines Owned: 0</p>
+  <button type="button" onclick="useWeightLiftingMagazine()">Read Diet Tips</button>
+</div>
+<div id="jobs">
+  <H1>Job Market</h1>
+    <h4>Coming Soon</h4>
+</div>
+<!--<footer id="footer">
+  <p>Copyright (c) 2018 Violent Response Entertainment All Rights Reserved. Special thanks to Fat Hazard for all his input. Ver. 0.3.0 (beta)</p>
+</footer>-->
+<!--Ver 0.3.0 (beta)-->
