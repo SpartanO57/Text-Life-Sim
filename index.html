@@ -21,7 +21,9 @@
 <div id="years">
     <button type="button" onclick="ageUp()">Age Up.</button>
     <h4>Age: </h4>
-    <h4 id="age"></h4>
+    <h4 id="age">New Born</h4>
+    <h4>Wallet:</h4>
+    <h4 id="wallet">0</h4>
   </div>
   <div id="havingSex">
     <button onclick="Sex()">Have Sex.</button>
@@ -93,15 +95,16 @@
 </div>
 <!--Job Area Layout. This is just a basic idea outline may not represent the final product-->
 <div id="jobs">
-  <H1 id="mcjob">Job Market</h1>
-    <h3>Apply to be a Burger Flipper</h3><!--Make This a button?-->
-    <p>Requirements: Be Alive</p>
+  <H1 id="getAJob">Job Market</h1>
+    <button id="burgerFlipperButton" onclick="beBurgerFlipper()">Apply to be a Burger Flipper</button>
+    <p>Requirements: Be Alive for at least 16 years</p>
     <p>pay: $10,000 Yearly</P>
-  <h3 id="internship">Get an Intership</h3><!--Make This a button?-->
-    <p>Requirements: 5 Math, 5 Reading, 5 Writing.</p>
+  <button id="internship" onclick="getInternship()">Get an Intership</button>
+    <p>Requirements: 5 Math, 5 Reading, 5 Writing, and be at least 18 years old.</p>
     <p>Pay: None, Gain 1 skill in Math, Reading, & Writing</p>
-  <h3 id="law">Apply to be a lawyer</h3><!--Make this a button?-->
-    <p>Requirements: 80 points in Math, Reading, Writing, and 20 in
+  <button id="law" onclick="beLawyer()">Apply to be a lawyer</button>
+    <p>Requirements: 80 points in Math, Reading, Writing, and be at least 18 years old</P>
+    <p>Pay: $250,000 Yearly</p>
 </div>
 <!--<footer id="footer">
   <p>Copyright (c) 2018 Violent Response Entertainment All Rights Reserved. Special thanks to Fat Hazard for all his input. Ver. 0.4.0 (beta)</p>

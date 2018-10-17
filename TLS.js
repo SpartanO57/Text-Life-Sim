@@ -75,6 +75,7 @@ function ageUp() { //This function keeps track of age and skill point use.
     currentAge ++;
     document.getElementById("age").innerHTML = currentAge;
     deathCheck();
+    jobCheck();
     classLimit = 0;
     document.getElementById("skillsRemaining").innerHTML = "Skills used: 0";
   } else {
@@ -465,6 +466,62 @@ function deathCheck() {//This function is to control death and alert for death.
     location.reload();
   } else {
     console.log("Still Alive AGE: " + currentAge);
+  }
+};
+
+//Job Market
+function beBurgerFlipper() {
+  if (currentAge >= 16) {
+    job = "Burger Flipper";
+    console.log("You are now a Burger Flipper");
+  } else {
+    console.log("You don't have the Requirements to get this job");
+  }
+};
+
+function getInternship() {
+  if (currentAge >= 18 && mathSkills >= 5 && readingSkills >= 5 && writingSkills >= 5) {
+    job = "internship";
+    console.log("You are now an intern");
+  } else {
+    console.log("Your don't have the Requirements to get this internship");
+  }
+};
+
+function beLawyer() {
+  if (currentAge >= 18 && mathSkills >= 80 && readingSkills >= 80 && writingSkills >= 80) {
+    job = "lawyer";
+    console.log("You are now a lawer");
+  } else {
+    console.log("You don't have the Requirements to get this job");
+  }
+};
+
+
+
+//Job Controller
+function jobCheck() {
+  if (currentAge <= 16) {
+    console.log("You're to young to have a job.")
+  } else if (job === "None") {
+    console.log("You don't have a job. You bum.");
+  } else if (job === "Burger Flipper") {
+    currentMoney = currentMoney + 10000;
+    document.getElementById("wallet").innerHTML = "$" + currentMoney;
+    console.log("Your wallet Contains: $" + currentMoney);
+  } else if (job === "internship") {
+    mathSkills = mathSkills + 1;
+    readingSkills = readingSkills + 1;
+    writingSkills = writingSkills + 1;
+    document.getElementById("mathArea").innerHTML = "Math Skill: " + mathSkills;
+    document.getElementById("readingArea").innerHTML = "Reading Skill: " + readingSkills;
+    document.getElementById("writingArea").innerHTML = "Writing Skill: " + writingSkills;
+  } else if (job === "lawyer") {
+    currentMoney = currentMoney + 250000;
+    document.getElementById("wallet").innerHTML = "$" + currentMoney;
+    console.log("Your walley contains: $" + currentMoney);
+  } else {
+    console.log("ERROR IN JOB CONTROLLER AREA TLS.js 473-492");
   }
 };
 
