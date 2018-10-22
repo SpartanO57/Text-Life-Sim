@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="TLS.css"></link>
 <link rel="shortcut icon" type="image/png" href="favicon.ico"/></link>
 <head>
-<body onload="fatHazard()">
+<body onload="fatHazard(), baseLoad()">
   <div id="header">
     <h1>Text Life Simulator (beta)</h1>
     <p>What kind of life will you live?</p>
@@ -23,17 +23,18 @@
     <h4>Age: </h4>
     <h4 id="age">New Born</h4>
     <h4>Wallet:</h4>
-    <h4 id="wallet">0</h4>
+    <h4 id="wallet">$0</h4>
   </div>
   <div id="havingSex">
     <button onclick="Sex()">Have Sex.</button>
     <h4>Had Sex</h4>
     <h4 id="haveSex">0</h4>
+    <h4>Time(s)</h4>
     <h4>STD's you have</h4>
     <h4 id="stdsGot">None</h4>
     <h4>You have</h4>
     <h4 id="childCounter">0</h4>
-    <h4>children</h4>
+    <h4>Children</h4>
 </div>
 </div>
 <div id="right">
@@ -105,6 +106,15 @@
   <button id="law" onclick="beLawyer()">Apply to be a lawyer</button>
     <p>Requirements: 80 points in Math, Reading, Writing, and be at least 18 years old</P>
     <p>Pay: $250,000 Yearly</p>
+  <button id="doctor" onclick="beDoctor()">Become a doctor</button>
+    <p>Requirements: Math skills, Reading skills, Writing Skills, Medical skills, and Science skills at 120 & be at least 21 years of age</p>
+    <p>Pay: $250,000 Yearly</p>
+  <button id="astronaut" onclick="beAstronaut()">Become and Astronaut</button>
+    <p>Requirements: Math, Reading, Writing, Astronomy, and Science skills at 120 & be at least 21 years of age</p>
+    <p>Pay: $200,000 Yearly</p>
+  <button id="rockstar" onclick="beRockstar()">Become a rock star</button>
+    <p>Requirements: Music skills at 150 & be at least 13 years old</p>
+    <p>Pay: $500,000 Yearly</p>
 </div>
 <!--<footer id="footer">
   <p>Copyright (c) 2018 Violent Response Entertainment All Rights Reserved. Special thanks to Fat Hazard for all his input. Ver. 0.4.0 (beta)</p>

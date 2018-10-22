@@ -155,9 +155,21 @@ function pregnancy() {//This Function test to find if player gets pragnant.
   }
 };
 
+function baseLoad() {
+  document.getElementById("wallet").innerHTML = "$" + currentMoney;
+  document.getElementById("mathArea").innerHTML = "Math Skill: " + mathSkills;
+  document.getElementById("readingArea").innerHTML = "Reading Skill: " + readingSkills;
+  document.getElementById("writingArea").innerHTML = "Writing Skill: " + writingSkills;
+  document.getElementById("musicArea").innerHTML = "Music Skill: " + musicSkills;
+  document.getElementById("medicArea").innerHTML = "Medical Skill: " + medicalSkills;
+  document.getElementById("gymArea").innerHTML = "Athleticism: " + athleticSkills;
+  document.getElementById("labArea").innerHTML = "Science Skill: " + scienceSkills;
+  document.getElementById("planetarium").innerHTML = "Astronomy Skill: " + astronomySkill;
+}
+
 function skillUse() {//This function is to keep track of the skill use
   document.getElementById("skillsRemaining").innerHTML = "Skills used:  " + classLimit;
-}
+};
 
 function studyMath() { //This is to check how well the player gains a skill point in math 1-3 possible points
   if (mathSkills >= 0 && classLimit <= 2) {
@@ -497,13 +509,39 @@ function beLawyer() {
   }
 };
 
+function beDoctor() {
+  if (currentAge >= 21 && mathSkills >= 120 && readingSkills >= 120 && writingSkills >= 120 && medicalSkills >= 120 && scienceSkills >= 120) {
+    job = "doctor";
+    console.log("You are now a Doctor");
+  } else {
+    console.log("You don't have the Requirements to get this job");
+  }
+};
+
+function beAstronaut() {
+  if (currentAge >= 21 && mathSkills >= 120 && readingSkills >= 120 && writingSkills >= 120 && astronomySkill >= 120 && scienceSkills >= 120) {
+    job = "astronaut";
+    console.log("You are now an Astronaut");
+  } else {
+    console.log("You are not qualified for this job");
+  }
+};
+
+function beRockstar() {
+  if (currentAge >= 13 && musicSkills >= 150) {
+    job = "musician";
+    console.log("YOU ARE A ROCKSTAR!!!");
+  } else {
+    console.log("You sound like a squrrel being run over by a bus full of tone death nuns.");
+  }
+};
 
 
 //Job Controller
 function jobCheck() {
   if (currentAge <= 16) {
     console.log("You're to young to have a job.")
-  } else if (job === "None") {
+  } else if (job === "none") {
     console.log("You don't have a job. You bum.");
   } else if (job === "Burger Flipper") {
     currentMoney = currentMoney + 10000;
@@ -520,8 +558,20 @@ function jobCheck() {
     currentMoney = currentMoney + 250000;
     document.getElementById("wallet").innerHTML = "$" + currentMoney;
     console.log("Your walley contains: $" + currentMoney);
+  } else if (job === "doctor") {
+    currentMoney = currentMoney + 250000;
+    document.getElementById("wallet").innerHTML = "$" + currentMoney;
+    console.log("Your wallet contains: $" + currentMoney);
+  } else if (job === "astronaut") {
+    currentMoney = currentMoney + 200000;
+    document.getElementById("wallet").innerHTML = "$" + currentMoney;
+    console.log("Your wallet contains: $" + currentMoney);
+  } else if (job === "musician") {
+    currentMoney = currentMoney + 500000;
+    document.getElementById("wallet").innerHTML = "$" + currentMoney;
+    console.log("Your wallet contains: $" + currentMoney);
   } else {
-    console.log("ERROR IN JOB CONTROLLER AREA TLS.js 473-492");
+    console.log("ERROR IN JOB CONTROLLER AREA TLS.js 528-562");
   }
 };
 
