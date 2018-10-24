@@ -57,7 +57,7 @@ var sheetMusic = 0;
 var weightLiftingMagazine = 0;
 
 //Death Zone
-var child = ["Died from dysentery on the Oregon Trail","your father got drunk and thought you were a football...go eagles..","left in a car, your mother wasn't very bright....","tide pods©, am i right?","it's dangerous to go alone...","your parents traded you for a ham sandwich....damn hippies ","DONALD TRUMP!!!","Thanks Obama!","because fuck you that's why!"];
+var child = ["Died from dysentery on the Oregon Trail","your father got drunk and thought you were a football...go eagles..","left in a car, your mother wasn't very bright....","tide pods©, am i right?","it's dangerous to go alone...","your parents traded you for a ham sandwich....damn hippies ","DONALD TRUMP!!!","Thanks Obama!"];
 
 var teen = ["having  a prescription pill smoothie cause no one understands you!, being a teenager is hard....","tide pods©, am i right?","because you just can't even right now","jumping out of a moving truck is totally badass, what could go wrong?","cause fucking on the side of the road is so HAWT!!","going home with someone you just met only to wake up as a skin suit, whoops....","its dangerous to go alone...","why the fuck would you do that!?!?","DONALD TRUMP!!!","Thanks Obama!","because fuck you that's why!"];
 
@@ -70,6 +70,18 @@ var teenDeath = teen[Math.floor(Math.random() * teen.length)];
 var adultDeath = adult[Math.floor(Math.random() * adult.length)];
 
 //The InnerWorkings
+function beBorn() {
+  rollMathBornSkills();
+  rollReadingBornSkills();
+  rollWritingBornSkills();
+  rollMusicBornSkills();
+  rollMedicalBornSkills();
+  rollAthleticBornSkills();
+  rollScienceBornSkills();
+  rollAstronomyBornSkills();
+  baseLoad();
+};
+
 function ageUp() { //This function keeps track of age and skill point use.
   if (currentAge >= 0) {
     currentAge ++;
@@ -81,6 +93,54 @@ function ageUp() { //This function keeps track of age and skill point use.
   } else {
     console.log("Warning!!! ISSUE DETECTED IN AGE");
   }
+};
+
+function rollMathBornSkills() {
+  bornMathSkillAdd = Math.floor(Math.random() * 10) + 1;
+  console.log("Math Skill Roll: " + bornMathSkillAdd);
+  mathSkills = mathSkills + bornMathSkillAdd;
+};
+
+function rollReadingBornSkills() {
+  bornReadingSkillAdd = Math.floor(Math.random() * 10) + 1;
+  console.log("Reading Roll: " + bornReadingSkillAdd);
+  readingSkills = readingSkills + bornReadingSkillAdd;
+};
+
+function rollWritingBornSkills() {
+  bornWritingSkillAdd = Math.floor(Math.random() * 10) + 1;
+  console.log("Writing Skill Roll: " + bornWritingSkillAdd);
+  writingSkills = writingSkills + bornWritingSkillAdd;
+};
+
+function rollMusicBornSkills() {
+  bornMusicSkillAdd = Math.floor(Math.random() * 10) + 1;
+  console.log("Music Skill Roll: " + bornMusicSkillAdd);
+  musicSkills = musicSkills + bornMusicSkillAdd;
+};
+
+function rollMedicalBornSkills() {
+  bornMedicalSkillAdd = Math.floor(Math.random() * 10) + 1;
+  console.log("Medical Skill Roll: " + bornMedicalSkillAdd);
+  medicalSkills = medicalSkills + bornMedicalSkillAdd;
+};
+
+function rollAthleticBornSkills() {
+  bornAthleticSkillAdd = Math.floor(Math.random() * 10) + 1;
+  console.log("athletic Skill Roll: " + bornAthleticSkillAdd);
+  athleticSkills = athleticSkills + bornAthleticSkillAdd;
+};
+
+function rollScienceBornSkills() {
+  bornScienceSkillAdd = Math.floor(Math.random() * 10) + 1;
+  console.log("Science Skill Roll: " + bornScienceSkillAdd);
+  scienceSkills = scienceSkills + bornScienceSkillAdd;
+};
+
+function rollAstronomyBornSkills() {
+  bornAstronomySkillAdd = Math.floor(Math.random() * 10) + 1;
+  console.log("Astronomy Skill Roll: " + bornAstronomySkillAdd);
+  astronomySkill = astronomySkill + bornAstronomySkillAdd;
 };
 
 function Sex() { //This function keeps track of the amoount of times the player has sex and pregnancys and STDS.
