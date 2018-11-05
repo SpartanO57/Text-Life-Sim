@@ -15,6 +15,8 @@ var gender = "Male";
 
 var job = "none";
 
+var currentHousing = "none";
+
 //Sweet Skills
 var mathSkills = 0;
 
@@ -636,6 +638,25 @@ function jobCheck() {
     console.log("ERROR IN JOB CONTROLLER AREA TLS.js 528-562");
   }
 };
+
+//Housing Area. This is the area that controls how housing will be handled
+function liveInSlums() {
+  if (currentAge >= 18 && job === "none" || currentAge >= 18 && job === "Burger Flipper" || currentAge >= 18 && job === "internship") {
+      currentHousing = "slum";
+      document.getElementById("housing").innerHTML = currentHousing;
+      console.log("You now live in " + currentHousing);
+  } else if (currentAge <= 17) {
+      console.log("You're not old enough to live here.")
+  } else if (currentAge >= 18 && job !== "none" || currentAge >= 18 && job !== "Burger Flipper" || currentAge >= 18 && job !== "internship") {
+      console.log("You make to much money. Go live somewhere else");
+  } else {
+    console.log("Error in Housing Area");
+  }
+};
+
+function getStudioApartment() {
+
+}
 
 //Fat Hazards Corner.
 function fatHazard() {
