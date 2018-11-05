@@ -71,6 +71,8 @@ var adultDeath = adult[Math.floor(Math.random() * adult.length)];
 
 //The InnerWorkings
 function beBorn() {
+  classLimit = classLimit + 3;
+  document.getElementById("skillsRemaining").innerHTML = "Skills used: " + classLimit;
   rollMathBornSkills();
   rollReadingBornSkills();
   rollWritingBornSkills();
@@ -669,4 +671,4 @@ function fatHazard() {
     }
 };
 
-//Ver 0.4.0 (beta)
+//Ver 0.4.1 (beta)
