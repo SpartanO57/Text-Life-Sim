@@ -17,6 +17,8 @@ var job = "none";
 
 var currentHousing = "none";
 
+var yearlyIncome = 0;
+
 //Sweet Skills
 var mathSkills = 0;
 
@@ -92,6 +94,7 @@ function ageUp() { //This function keeps track of age and skill point use.
     document.getElementById("age").innerHTML = currentAge;
     deathCheck();
     jobCheck();
+    rentCheck();
     classLimit = 0;
     document.getElementById("skillsRemaining").innerHTML = "Skills used: 0";
   } else {
@@ -549,6 +552,7 @@ function deathCheck() {//This function is to control death and alert for death.
 function beBurgerFlipper() {
   if (currentAge >= 16) {
     job = "Burger Flipper";
+    document.getElementById("job").innerHTML = job;
     console.log("You are now a Burger Flipper");
   } else {
     console.log("You don't have the Requirements to get this job");
@@ -558,6 +562,7 @@ function beBurgerFlipper() {
 function getInternship() {
   if (currentAge >= 18 && mathSkills >= 5 && readingSkills >= 5 && writingSkills >= 5) {
     job = "internship";
+    document.getElementById("job").innerHTML = job;
     console.log("You are now an intern");
   } else {
     console.log("Your don't have the Requirements to get this internship");
@@ -567,6 +572,7 @@ function getInternship() {
 function beLawyer() {
   if (currentAge >= 18 && mathSkills >= 80 && readingSkills >= 80 && writingSkills >= 80) {
     job = "lawyer";
+    document.getElementById("job").innerHTML = job;
     console.log("You are now a lawer");
   } else {
     console.log("You don't have the Requirements to get this job");
@@ -576,6 +582,7 @@ function beLawyer() {
 function beDoctor() {
   if (currentAge >= 21 && mathSkills >= 120 && readingSkills >= 120 && writingSkills >= 120 && medicalSkills >= 120 && scienceSkills >= 120) {
     job = "doctor";
+    document.getElementById("job").innerHTML = job;
     console.log("You are now a Doctor");
   } else {
     console.log("You don't have the Requirements to get this job");
@@ -585,6 +592,7 @@ function beDoctor() {
 function beAstronaut() {
   if (currentAge >= 21 && mathSkills >= 120 && readingSkills >= 120 && writingSkills >= 120 && astronomySkill >= 120 && scienceSkills >= 120) {
     job = "astronaut";
+    document.getElementById("job").innerHTML = job;
     console.log("You are now an Astronaut");
   } else {
     console.log("You are not qualified for this job");
@@ -594,6 +602,7 @@ function beAstronaut() {
 function beRockstar() {
   if (currentAge >= 13 && musicSkills >= 150) {
     job = "musician";
+    document.getElementById("job").innerHTML = job;
     console.log("YOU ARE A ROCKSTAR!!!");
   } else {
     console.log("You sound like a squrrel being run over by a bus full of tone death nuns.");
@@ -607,31 +616,38 @@ function jobCheck() {
     console.log("You're to young to have a job.")
   } else if (job === "none") {
     console.log("You don't have a job. You bum.");
+    yearlyIncome = 0;
   } else if (job === "Burger Flipper") {
     currentMoney = currentMoney + 10000;
+    yearlyIncome = 10000;
     document.getElementById("wallet").innerHTML = "$" + currentMoney;
     console.log("Your wallet Contains: $" + currentMoney);
   } else if (job === "internship") {
     mathSkills = mathSkills + 1;
     readingSkills = readingSkills + 1;
     writingSkills = writingSkills + 1;
+    yearlyIncome = 0;
     document.getElementById("mathArea").innerHTML = "Math Skill: " + mathSkills;
     document.getElementById("readingArea").innerHTML = "Reading Skill: " + readingSkills;
     document.getElementById("writingArea").innerHTML = "Writing Skill: " + writingSkills;
   } else if (job === "lawyer") {
     currentMoney = currentMoney + 250000;
+    yearlyIncome = 250000;
     document.getElementById("wallet").innerHTML = "$" + currentMoney;
     console.log("Your walley contains: $" + currentMoney);
   } else if (job === "doctor") {
     currentMoney = currentMoney + 250000;
+    yearlyIncome = 250000;
     document.getElementById("wallet").innerHTML = "$" + currentMoney;
     console.log("Your wallet contains: $" + currentMoney);
   } else if (job === "astronaut") {
     currentMoney = currentMoney + 200000;
+    yearlyIncome = 200000
     document.getElementById("wallet").innerHTML = "$" + currentMoney;
     console.log("Your wallet contains: $" + currentMoney);
   } else if (job === "musician") {
     currentMoney = currentMoney + 500000;
+    yearlyIncome = 500000
     document.getElementById("wallet").innerHTML = "$" + currentMoney;
     console.log("Your wallet contains: $" + currentMoney);
   } else {
@@ -641,13 +657,13 @@ function jobCheck() {
 
 //Housing Area. This is the area that controls how housing will be handled
 function liveInSlums() {
-  if (currentAge >= 18 && job === "none" || currentAge >= 18 && job === "Burger Flipper" || currentAge >= 18 && job === "internship") {
+  if (currentAge >= 18 && yearlyIncome <= 10000) {
       currentHousing = "slum";
       document.getElementById("housing").innerHTML = currentHousing;
       console.log("You now live in " + currentHousing);
   } else if (currentAge <= 17) {
       console.log("You're not old enough to live here.")
-  } else if (currentAge >= 18 && job !== "none" || currentAge >= 18 && job !== "Burger Flipper" || currentAge >= 18 && job !== "internship") {
+  } else if (currentAge >= 18 && yearlyIncome <= 10001) {
       console.log("You make to much money. Go live somewhere else");
   } else {
     console.log("Error in Housing Area");
@@ -655,8 +671,99 @@ function liveInSlums() {
 };
 
 function getStudioApartment() {
+  if (currentAge >= 18 && yearlyIncome >= 10001) {
+      currentHousing = "Studio Apartment";
+      document.getElementById("housing").innerHTML = currentHousing;
+      console.log("You now live in " + currentHousing);
+  } else if (currentAge <= 17) {
+      console.log("You're not old enough to live here");
+  } else if (currentAge >= 18 && yearlyIncome <= 5001) {
+      console.log("You can't afford to live here");
+  } else {
+      console.log("error in Housing Area");
+  }
+};
 
-}
+function getSingleApartment() {
+  if (currentAge >= 18 && yearlyIncome >= 10000) {
+      currentHousing = "Single Apartment";
+      document.getElementById("housing").innerHTML = currentHousing;
+      console.log("You now live in " + currentHousing);
+  } else if (currentAge <= 17) {
+      console.log("You're to young to live alone");
+  } else if (currentAge >= 18 && yearlyIncome <= 9999) {
+      console.log("You can't afford to live here");
+  } else {
+      console.log("ERROR");
+  }
+};
+
+function getDoubleApartment() {
+  if (currentAge <= 17) {
+      console.log("You're to young to live here");
+  } else if (currentAge >= 18 && yearlyIncome >= 12000) {
+    currentHousing = "Double Apartment";
+    document.getElementById("housing").innerHTML = currentHousing;
+    console.log("You live in " + currentHousing);
+  } else if (currentHousing >= 18 && yearlyIncome <= 49999) {
+    console.log("You Can't afford to live here");
+  } else {
+    console.log("Error");
+  }
+};
+
+function getSmallHouse() {
+  if (currentAge <= 17) {
+    console.log("You're to young to move out");
+  } else if (currentAge >= 18 && yearlyIncome >= 20000) {
+    currentHousing = "Small House";
+    currentMoney = currentMoney - 20000;
+    document.getElementById("housing").innerHTML = currentHousing;
+    console.log("You have bought a small house");
+  } else if (currentAge >= 18 && yearlyIncome <= 19999) {
+    console.log("You cannot afford to buy this house");
+  }
+};
+
+function getDecentSizedHouse() {
+  if (currentAge <= 17) {
+    console.log("You're to young to move out");
+  } else if (currentAge >= 18 && yearlyIncome >= 75000) {
+    currentHousing = "Decent House";
+    currentMoney = currentMoney - 75000;
+    document.getElementById("housing").innerHTML = currentHousing;
+    console.log("You bought a Decent Sized house");
+  } else if (currentAge >= 18 && yearlyIncome <= 69999) {
+    console.log("You cannot afford to buy this House");
+  }
+};
+
+function getLuxaryCondo() {
+  if (currentAge <= 17) {
+    console.log("You are to young to move out");
+  } else if (currentAge >= 18 && yearlyIncome >= 100000) {
+    currentHousing = "Luxary Condo";
+    currentMoney = currentMoney - 100000;
+    document.getElementById("housing").innerHTML = currentHousing;
+    console.log("YOu bought a Luxary Condo");
+  } else if (currentAge >= 18 && yearlyIncome <= 99999) {
+    console.log("You can't afford this place");
+  }
+};
+
+function rentCheck() {
+  if (currentHousing === "slums") {
+    console.log("You live rent free");
+  } else if (currentHousing === "Studio Apartment") {
+    currentMoney = currentMoney - 5000;
+  } else if (currentHousing === "Single Apartment") {
+    currentMoney = currentMoney - 8000;
+  } else if (currentHousing === "Double Apartment") {
+    currentMoney = currentMoney - 10000;
+  } else if (currentHousing === "Luxary Condo") {
+    currentMoney = currentMoney - 5000;
+  }
+};
 
 //Fat Hazards Corner.
 function fatHazard() {
